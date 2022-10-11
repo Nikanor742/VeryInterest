@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 339874914462658571, guid: cc2f16245848e704bb40a765fa32ccce, type: 3}
       propertyPath: randomPath
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 339874914462658571, guid: cc2f16245848e704bb40a765fa32ccce, type: 3}
       propertyPath: pathPointCount
