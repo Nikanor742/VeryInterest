@@ -7,7 +7,7 @@ public class ObjectMover : MonoBehaviour
     [SerializeField] private bool randomPath;
     private List<Vector3> randomizedPath;
 
-    [ShowIf(nameof(randomPath))] [SerializeField] private int pathPointCount;
+    [ShowIf(nameof(randomPath))] [SerializeField] private int pathPointsCount;
     [ShowIf(nameof(randomPath))] [SerializeField] private float minimalPositionX;
     [ShowIf(nameof(randomPath))] [SerializeField] private float maximalPositionX;
     [ShowIf(nameof(randomPath))] [SerializeField] private float maximalStepZ;
@@ -30,8 +30,12 @@ public class ObjectMover : MonoBehaviour
 
     private void RandomizePath()
     {
+        if (pathPointsCount <= 0)
+        {
+            Debug.LogError("Incorrect random settings");
+        }
         randomizedPath = new List<Vector3>();
-        for (int i = 0; i < pathPointCount; i++)
+        for (int i = 0; i < pathPointsCount; i++)
         {
             if (i != 0)
             {
